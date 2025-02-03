@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import initCanvas from "../../../utils/initCanvas";
 import React, {
   ComponentPropsWithoutRef,
   useEffect,
@@ -18,7 +19,10 @@ function MousePosition(): MousePosition {
     x: 0,
     y: 0,
   });
-
+  useEffect(() => {
+    initCanvas();
+  }, [initCanvas]); // Add missing dependency
+  
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
