@@ -12,7 +12,7 @@ const navigation = [
   { name: "Calendar", href: "#", current: true },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
